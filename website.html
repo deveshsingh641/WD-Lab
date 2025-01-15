@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6347;
+            padding: 15px 30px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffd700;
+        }
+
+        #hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(to right, #ff7f50, #ff4500);
+            color: white;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #hero button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ff6347;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #hero button:hover {
+            background-color: #ffd700;
+        }
+
+        #menu, #offers {
+            padding: 40px 20px;
+            background-color: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #menu h2, #offers h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff6347;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .menu-item p {
+            color: #666;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .menu-item button {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            color: white;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item button:hover {
+            background-color: #ff4500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">FoodExpress</div>
+        <nav class="navbar">
+            <a href="#menu">Menu</a>
+            <a href="#offers">Offers</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h1>Delicious Food Delivered to Your Doorstep!</h1>
+            <button id="order-now">Order Now</button>
+        </section>
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-items">
+                
+            </div>
+        </section>
+        <section id="offers">
+            <h2>Special Offers</h2>
+            <p>Get 20% off on your first order!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FoodExpress. All rights reserved.</p>
+    </footer>
+    <script>
+        const menuItems = [
+            { name: "Pizza", price: "$10", image: "https://img.freepik.com/free-photo/mixed-pizza-with-olive-bell-pepper-tomato_140725-183.jpg?t=st=1734588051~exp=1734591651~hmac=bb40ea749dddca863a68d77117ec2c28a0f468fd53d1ae5c514bf5f587851290&w=740" },
+            { name: "Burger", price: "$7", image: "https://img.freepik.com/free-photo/huge-burger-with-fried-meat-vegetables_140725-971.jpg?ga=GA1.1.1984151932.1731345413&semt=ais_tags_boosted" },
+            { name: "Pasta", price: "$8", image: "https://img.freepik.com/free-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-19744.jpg" },
+            { name: "Thali", price: "$15", image: "https://img.freepik.com/free-photo/delicious-indian-food-tray_23-2148723505.jpg" }
+        ];
+
+        const menuContainer = document.querySelector('.menu-items');
+
+        menuItems.forEach(item => {
+            const div = document.createElement('div');
+            div.classList.add('menu-item');
+            div.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>${item.price}</p>
+                <button>Add to Cart</button>
+            `;
+            menuContainer.appendChild(div);
+        });
+    </script>
+</body>
+</html>

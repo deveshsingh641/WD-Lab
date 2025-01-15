@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameset | HTML</title>
+    <style>
+      body{ margin: 0px; padding: 0px; box-sizing: border-box;}
+      .frm_bkg{ background-color: #fabf8f;}
+      .nav_bkg{ background-color:#fde9d9;}
+
+    </style>
+</head>
+<frameset rows="11%,6%,*" border="1"><!--frameset start-->
+     
+      <frameset cols="17%,*">
+        <frame src="logo.html" scrolling="no" class="frm_bkg" ></frame>
+        <frame src="welcome.html" class="frm_bkg"></frame>
+      </frameset>
+
+     <frame src="navbar.html"  scrolling="no"  class="nav_bkg"></frame>
+     
+      <frameset cols="17%,*">
+        <frame src="courseMenu.html"></frame>
+        <frame src="home.html" name="display_frm"></frame>
+      </frameset>
+
+</frameset><!--frameset end-->
+
+<noframes>
+<body>
+
+</body>
+</noframes>
+</html>

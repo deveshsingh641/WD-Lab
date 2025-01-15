@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000204, #000307);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        form {
+            background-color: #d5eb0d;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+    
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        
+        td {
+            vertical-align: middle;
+        }
+
+        td:nth-child(1) {
+            width: 30%;
+            padding-right: 10px;
+        }
+
+        td:nth-child(3) {
+            width: 70%;
+        }
+
+    
+        @media screen and (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            caption {
+                font-size: 1.3em;
+            }
+
+            td:nth-child(1) {
+                text-align: left;
+            }
+
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+
+        
+       
+</head>
+
+<body>
+    <div>
+        <form>
+            <table width="auto" border="0" align="center" cellspacing="10px" cellpadding="10px">
+                <caption><strong>Registration Page</strong> </caption>
+
+                <tr>
+                    <td><label>User Name:</label></td>
+                    <td></td>
+                    <td><input type="text" placeholder="Enter User Name" class="input" /></td>
+                </tr>
+
+                <tr>
+                    <td><label>Password:</label></td>
+                    <td></td>
+                    <td><input type="password" placeholder="Enter Password" class="input" /></td>
+                </tr>
+
+                <tr>
+                    <td><label>E-mail Id:</label></td>
+                    <td></td>
+                    <td><input type="email" placeholder="Enter E-mail id" class="input" /></td>
+                </tr>
+
+                <tr>
+                    <td><label>Phone No.:</label></td>
+                    <td></td>
+                    <td><input type="text" placeholder="Enter Phone No" class="input" /></td>
+                </tr>
+
+
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td></td>
+                    <td>
+                        <input type="radio" name="gender" checked />Male
+                        <input type="radio" name="gender" />Female
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Date of Birth:</label></td>
+                    <td></td>
+                    <td><input type="Date" class="input" /></td>
+                </tr>
+
+                <tr>
+                    <td><label>Languages Known:</label></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="language" checked>English
+                        <input type="checkbox" name="language">Telugu
+                        <input type="checkbox" name="language">Hindi
+                        <input type="checkbox" name="language">Tamil
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Address:</label></td>
+                    <td></td>
+                    <td>
+                        <textarea rows="10" class="input"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="submit" class="btn">
+                        <input type="reset" class="btn">
+                    </td>
+
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+</body>
+
+</html>

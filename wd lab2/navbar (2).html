@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar | HTML Frame</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul li {
+            border-right: 2px solid #000;
+            padding: 10px 100px 10px 100px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        ul li:last-child {
+            border-right: 0;
+        }
+
+        /* using table */
+        table td {
+            text-align: center;
+            border: 1px solid #dddcdc;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            line-height: 43px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <ul>
+        <li><a href="home.html" target="display_frm">Home</a></li>
+        <li><a href="">Login</a></li>
+        <li><a href="">Registration</a></li>
+        <li><a href="">Catalogue</a></li>
+        <li><a href="">Cart</a></li>
+    </ul> -->
+
+    <!-- using table -->
+    <table width="100%" cellspacing="0" cellpadding="11">
+        <tr>
+            <td><a href="home.html" target="display_frm">Home</a></td>
+            <td><a href="">Login</a></td>
+            <td><a href="">Registration</a></td>
+            <td><a href="">Catalogue</a></td>
+            <td><a href="">Cart</a></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

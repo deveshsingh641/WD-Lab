@@ -1,0 +1,184 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content= 
+        "width=device-width, initial-scale=1.0"> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            background-image: url(https://images.unsplash.com/photo-1586775490184-b79f0621891f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFlc3RoYXRpYyUyMHdhbGxwYXBlciUyMFdISVRFfGVufDB8fDB8fHww);
+        } 
+
+        header { 
+            background-color: #d7ac11; 
+            color: #000000; 
+            text-align: center;
+        } 
+
+        nav { 
+            background-color: #242424; 
+            padding: 10px; 
+        } 
+
+        nav a { 
+            color: #66720b; 
+            text-decoration: none; 
+            padding: 10px; 
+            margin-right: 10px; 
+            display: inline-block; 
+        } 
+
+        .container1 { 
+            
+            justify-content: space-between; 
+            max-width: 95%; 
+            margin: 0 auto; 
+            padding: 20px;
+            color: rgb(11, 11, 11);
+            display: flex;
+            background-color: #90fa05;
+        } 
+
+        firstpara{ 
+            text-align: justify; 
+            padding: 880px;
+        } 
+
+        main { 
+            flex: 2; 
+        } 
+
+        article { 
+            margin-bottom: 20px; 
+            padding: 10px 20px; 
+            border: 1px solid rgb(145, 145, 145); 
+            margin-right: 10px; 
+        } 
+
+        aside { 
+            flex: 1; 
+            background-color: #7a9299; 
+            padding: 10px;
+            background-image: url(https://plus.unsplash.com/premium_photo-1683120931945-ae07bb87825c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdhbGx8ZW58MHx8MHx8fDA%3D);
+            border: solid color(srgb rgb(131, 14, 14) green blue);
+            border-width: 800px;
+            border-radius: 25px;
+            
+       
+        }
+        a:hover{
+            color: brown;
+            font-size: 25px;
+        }
+        
+        
+
+    </style> 
+    <title>Blogging Website Layout</title> 
+</head> 
+
+<body> 
+    <header> 
+        <h1>GeeksforGeeks</h1> 
+        <p>A computer science portal for geeks</p> 
+    </header> 
+
+    <nav> 
+        <a href="#">Home</a> 
+        <a href="#">HTML</a> 
+        <a href="#">CSS</a> 
+        <a href="#">JavaScript</a> 
+        
+    </nav> 
+
+    <div class="container1"> 
+        <main> 
+            <article> 
+                <h2>HTML</h2> 
+                <p class="post-meta"> 
+                    Published on December 11, 2023 by GeeksforGeeks 
+                </p> 
+                <p><b>
+                    HTML stands for HyperText Markup Language. It is 
+                    used to design the web pages. With the help of HTML, 
+                    you can create a complete website structure. HTML 
+                    is the combination of Hypertext and Markup language. 
+                    Hypertext defines the link between the web pages 
+                    and markup language defines the text document within 
+                    the tag that define the structure of web pages. 
+                </b>
+                   
+                </p> 
+            </article> 
+
+            <article> 
+                <h2>CSS</h2> 
+                <p class="post-meta"> 
+                    Published on December 10, 2023 by GeeksforGeeks 
+                </p> 
+                <p id="firstpara"><b>
+                    CSS (Cascading Style Sheets) is used to styles web 
+                    pages. Cascading Style Sheets are fondly referred 
+                    to as CSS. The reason for using this is to simplify 
+                    the process of making web pages presentable. It allows 
+                    you to apply styles on web pages. More importantly, 
+                    it enables you to do this independently of the HTML 
+                    that makes up each web page. 
+                
+                    CSS (Cascading Style Sheets) is used to styles web 
+                    pages. Cascading Style Sheets are fondly referred 
+                    to as CSS. The reason for using this is to simplify 
+                    the process of making web pages presentable. It allows 
+                    you to apply styles on web pages. More importantly, 
+                    it enables you to do this independently of the HTML 
+                    that makes up each web page. </b>p>
+                </p> 
+            </article> 
+
+            <article> 
+                <h2>JavaScript</h2> 
+                <p class="post-meta"> 
+                    Published on December 09, 2023 by GeeksforGeeks 
+                </p> 
+                <p><b>
+                    JavaScript (JS) is the most popular lightweight, 
+                    interpreted compiled programming language. It can 
+                    be used for both Client-side as well as Server-side 
+                    developments. JavaScript also known as a scripting 
+                    language for web pages. This JavaScript Tutorial is 
+                    designed to help both beginners and experienced 
+                    professionals master the fundamentals of JavaScript 
+                    and unleash their creativity to build powerful web 
+                    applications. From basic syntax and data types to 
+                    advanced topics such as object-oriented programming 
+                    and DOM manipulation. 
+                </b>
+
+                </p> 
+            </article> 
+
+           
+        </main> 
+
+        <aside> 
+            <h2>Recent Posts</h2> 
+            <ul> 
+                <li><a href="#"><h1>HTML</h1></a></li> 
+                <li><a href="#"><H1>CSS</H1></a></li> 
+                <li><a href="#"><H1>JAVASCRIPT</H1></a></li> 
+              
+            </ul> 
+        </aside> 
+    </div>
+
+    <div class="box"></div>
+
+  
+</body> 
+
+</html>

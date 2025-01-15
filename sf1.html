@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.rating label,
+.checkbox-group label {
+    display: inline-block;
+    margin: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #07e044;
+}
+    </style>
+</head>
+<body>
+    <form>
+        <img src="thunder.png" alt="logo" height="200px" >
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" placeholder="First Name">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" placeholder="Last Name">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <p><strong>How do you rate our customer support?</strong></p>
+        <div class="rating">
+            <label><input type="radio" name="support-rating" value="1"> 1</label>
+            <label><input type="radio" name="support-rating" value="2"> 2</label>
+            <label><input type="radio" name="support-rating" value="3"> 3</label>
+            <label><input type="radio" name="support-rating" value="4"> 4</label>
+            <label><input type="radio" name="support-rating" value="5"> 5</label>
+        </div>
+        <p><strong>How was our representative? (Check all that apply)</strong></p>
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="professional"> Professional</label>
+            <label><input type="checkbox" value="patient"> Patient</label>
+            <label><input type="checkbox" value="friendly"> Friendly</label>
+            <label><input type="checkbox" value="supportive"> Supportive</label>
+            <label><input type="checkbox" value="clear"> Clear and direct</label>
+            <label><input type="checkbox" value="helpful"> Helpful and kind</label>
+        </div>
+        <button type="submit" onclick="alert">Submit Feedback</button>
+    </form>
+    <script src="script.js" ></script>
+</body>
+</body>
+</html>

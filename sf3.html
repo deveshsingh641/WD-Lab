@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <title>Survey Form</title>
+    <style>
+        
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+
+.survey-container {
+    background: #fff;
+    padding: 25px 35px;
+    border-radius: 16px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #8e2de2;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.progress-bar {
+    width: 100%;
+    background: #e6ad91;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 10px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #4a00e0, #8e2de2);
+    transition: width 0.3s ease-in-out;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #8e2de2;
+    box-shadow: 0 0 5px rgba(142, 45, 226, 0.5);
+}
+
+
+.tooltip {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 2px;
+    display: block;
+}
+
+
+.rating span {
+    font-size: 1.5rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating span:hover, .rating span:hover ~ span {
+    color: #8e2de2;
+}
+
+
+.btn-submit {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(90deg, #4a00e0, #8e2de2);
+    transform: translateY(-3px);
+}
+
+
+#message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #28a745;
+    font-weight: 600;
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="survey-container">
+        <h1>✨Age Group Survey Form</h1>
+        <p>Your opinion matters! Please take a moment to complete this survey.</p>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <form id="surveyForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <small class="tooltip">Your full name</small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <small class="tooltip">We'll never share your email</small>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age Group:</label>
+                <select id="age" name="age" required>
+                    <option value="" disabled selected>Select your age group</option>
+                    <option value="Under 18">Under 18</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="36-50">36-50</option>
+                    <option value="51+">51+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Rate Your Experience (Optional):</label>
+                <div class="rating">
+                    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" placeholder="Share your thoughts..." rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('surveyForm');
+const progress = document.getElementById('progress');
+const ratingStars = document.querySelectorAll('.rating span');
+
+
+form.addEventListener('input', () => {
+    const inputs = form.querySelectorAll('input, select, textarea');
+    const completed = [...inputs].filter(input => input.value).length;
+    const total = inputs.length;
+    const percentage = Math.round((completed / total) * 100);
+    progress.style.width = `${percentage}%`;
+});
+
+
+ratingStars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+        ratingStars.forEach((s, i) => {
+            s.style.color = i <= index ? '#8e2de2' : '#ddd';
+        });
+    });
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    document.getElementById('message').innerText = 
+        `🎉 Thank you, ${name}! Your feedback has been recorded. We'll contact you at ${email}.`;
+    form.reset();
+    progress.style.width = '0%';
+    ratingStars.forEach(star => (star.style.color = '#ddd'));
+});
+
+    </script>
+</body>
+</html>
